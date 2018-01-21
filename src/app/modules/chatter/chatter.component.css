@@ -1,0 +1,35 @@
+.chat-container{
+    padding-top:20px;
+    border: 1px solid black;
+    height:70vh;
+    position: absolute;
+}
+
+.chat-comment-box{
+    padding-top:0px;
+    border: 1px solid black;
+    /* width:100%; */
+    align-self: flex-start;
+    margin: 8px 0 8px 0;
+    border-radius:3px;
+}
+
+.chat-comment-box .user-name-section{
+    background-color: lightblue;
+    padding-top:4px;
+}
+
+.chat-comment-box .user-name-section.localComment{
+    background-color: lightgreen;
+}
+
+.comment-bottom-margin{
+    margin-bottom:4px;
+}
+
+
+.chat-input-container{
+    bottom:0;
+    position: absolute;
+    margin-left:-15px;
+}
