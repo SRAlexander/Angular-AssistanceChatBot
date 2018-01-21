@@ -1,0 +1,16 @@
+[
+    {
+        "id" : 0,
+          "userId": -1,
+          "userName": "Helper",
+          "message": "Hi, how can I help you today?",
+          "localComment": false
+      },
+      {
+        "id" : 1,
+          "userId": -1,
+          "userName": "Mr User",
+          "message": "You can't, bye!",
+          "localComment": true
+      }
+]

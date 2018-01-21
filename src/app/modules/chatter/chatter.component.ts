@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IComment } from 'app/modules/chatter/comment';
+import { ChatService } from 'app/modules/chatter/chat.service';
 
 
 @Component({
@@ -9,20 +10,8 @@ import { IComment } from 'app/modules/chatter/comment';
 })
 export class ChatterComponent implements OnInit {
 
-  comments : IComment [] = [{
-    id : 0,
-      userId: -1,
-      userName: "Helper",
-      message: 'Hi, how can I help you today?',
-      localComment: false
-  },
-  {
-    id : 1,
-      userId: -1,
-      userName: "Mr User",
-      message: "You can't, bye!",
-      localComment: true
-  }];
+  comments : IComment [] = [];
+  errorMessage: string;
 
   _chatInput: string;
   get chatInput(): string {
@@ -32,10 +21,15 @@ export class ChatterComponent implements OnInit {
       this._chatInput = value;
   }
 
-  constructor() { }
+  constructor(private _chatService : ChatService) { }
 
-  ngOnInit() {
-
+  ngOnInit() : void {
+    this._chatService.getComments()
+    .subscribe(
+        comments => {
+                this.comments= comments
+            },
+        error => this.errorMessage = <any>error);
   }
 
   postCommentClick() : void{
