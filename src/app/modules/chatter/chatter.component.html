@@ -12,12 +12,17 @@
         <div class='container chat-comment-box' [ngClass]="{'left-spacing' : comment.localComment }">
           <div class='row user-name-section' [ngClass]="{'localComment' : comment.localComment }">
             <div class='col-12'>
-              <p class="comment-bottom-margin" [ngClass]="{'text-right': comment.localComment}">{{comment.userName}}</p>
+              <p class="comment-bottom-margin" *ngIf="comment.localComment" [ngClass]="{'text-right': comment.localComment}">
+                  <i class='fa fa-user-secret'></i> User 
+              </p>
+              <p class="comment-bottom-margin" *ngIf="!comment.localComment" [ngClass]="{'text-right': comment.localComment}">
+                  <i class='fa fa-user-circle'></i> Watson
+              </p>
             </div>
           </div>
           <div class='row'>
             <div class='col-12'>
-              <p class="comment-bottom-margin" [ngClass]="{'text-right' : comment.localComment}">{{comment.message}}</p>
+              <p class="comment-bottom-margin" [ngClass]="{'text-right' : comment.localComment}">{{comment.localComment ? comment.watsonResponse.input.text: comment.watsonResponse.output.text}}</p>
             </div>
           </div>
         </div>

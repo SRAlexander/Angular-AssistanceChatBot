@@ -1,16 +1,39 @@
-[
+
     {
-        "id" : 0,
-          "userId": -1,
-          "userName": "Helper",
-          "message": "Hi, how can I help you today?",
-          "localComment": false
-      },
-      {
-        "id" : 1,
-          "userId": -1,
-          "userName": "Mr User",
-          "message": "You can't, bye!",
-          "localComment": true
-      }
-]
+        "intents": [
+            {
+                "intent": "account",
+                "confidence": 1
+            }
+        ],
+        "entities": [
+            {
+                "entity": "account_type",
+                "location": {},
+                "value": "current",
+                "confidence": 1
+            }
+        ],
+        "input": {
+            "text": "current"
+        },
+        "output": {
+            "text": [
+                "What would you like to do with your current account? Get your Balance, transfer funds or arrange overdraft"
+            ],
+            "nodes_visited": [
+                "node_10_1516115538857",
+                "node_11_1516115567193"
+            ],
+            "log_messages": []
+        },
+        "context": {
+            "conversation_id": "f481b819-b81b-4a89-bf26-297e37dfa151",
+            "system": {
+                "dialog_stack": {},
+                "dialog_turn_counter": 2,
+                "dialog_request_counter": 2,
+                "_node_output_map": {}
+            }
+        }
+    }

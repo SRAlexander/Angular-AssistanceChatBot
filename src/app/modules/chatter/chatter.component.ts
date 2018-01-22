@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IComment } from 'app/modules/chatter/comment';
 import { ChatService } from 'app/modules/chatter/chat.service';
+import { IWatsonResponse } from 'app/modules/chatter/watson-response';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { ChatService } from 'app/modules/chatter/chat.service';
 export class ChatterComponent implements OnInit {
 
   comments : IComment [] = [];
+  newComment : IComment;
+
   errorMessage: string;
 
   _chatInput: string;
@@ -24,35 +27,51 @@ export class ChatterComponent implements OnInit {
   constructor(private _chatService : ChatService) { }
 
   ngOnInit() : void {
-    this._chatService.getComments()
+    this._chatService.init()
     .subscribe(
-        comments => {
-                this.comments= comments
-                // var objDiv = document.getElementById("chat-container");
-                // objDiv.scrollTop = objDiv.scrollHeight;
-            },
-        error => this.errorMessage = <any>error);
+        comment => {
+          this.comments = [];
+          this.comments.push(
+            {
+              localComment : false,
+              watsonResponse: comment
+            })
+        },
+        error => this.errorMessage = <any>error
+    );
   }
 
   postCommentClick() : void{
-    console.log("I'm here with input... " + this._chatInput);
+    // console.log("I'm here with input... " + this._chatInput);
     this.addComment(this._chatInput);
     this._chatInput = '';
     
     // Send off message for response
-    // var objDiv = document.getElementById("chat-container");
-    // objDiv.scrollTop = objDiv.scrollHeight;
+    this.postComment();
 
   }
 
+  postComment(){
+    this._chatService.postComment(this.newComment.watsonResponse)
+    .subscribe(
+      comment => {
+        this.comments = [];
+        this.comments.push(
+          {
+            localComment : false,
+            watsonResponse: comment
+          })
+      },
+      error => this.errorMessage = <any>error
+    );
+  }
+  
   addComment(message :string) : void {
-    this.comments.push({
-      id : 0,
-      userId: 0,
-      userName: "Mr User",
-      message: message,
-      localComment: true
-    });
+    let lastComment = this.comments[this.comments.length-1];
+    this.newComment = JSON.parse(JSON.stringify(lastComment));
+    this.newComment.localComment = true;
+    this.newComment.watsonResponse.input.text = message;
+    this.comments.push(this.newComment);
     return;
   }
 
