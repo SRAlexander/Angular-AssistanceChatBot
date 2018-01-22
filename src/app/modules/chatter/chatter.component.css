@@ -1,14 +1,16 @@
 .chat-container{
-    padding-top:20px;
-    border: 1px solid black;
+    padding:8px 16px 0 16px;
+    border: 1px solid lightsteelblue;
     height:70vh;
     /* position: absolute; */
     overflow-y: auto;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
 
 .chat-comment-box{
     padding-top:0px;
-    border: 1px solid black;
+    border: 1px solid lightblue;
     /* width:100%; */
     align-self: flex-start;
     margin: 8px 0 8px 0;

@@ -10,15 +10,16 @@ import { IWatsonResponse } from "app/modules/chatter/watson-response";
 @Injectable()
 export class ChatService {
 
-  private _chatUrl: string = '././api/conversation/conversation.json';
-  private _chatInit: string = ''
-  private _chatPost: string = '';
+  private _chatUrl : string = 'http://localhost:3000';  
+//   private _chatUrl: string = '././api/conversation/conversation.json';
+//   private _chatInit: string = ''
+//   private _chatPost: string = '';
 
     constructor(private _http : HttpClient){
     }
     
     init(): Observable<IWatsonResponse>{
-        return this._http.get<IWatsonResponse>(this._chatUrl)
+        return this._http.get<IWatsonResponse>(this._chatUrl + "/init")
             .do(data => 
                 {
                     console.log('Get: ' + JSON.stringify(data));
@@ -32,7 +33,7 @@ export class ChatService {
         let headers = new HttpHeaders({'Content-Type': 'application/json'});
         let options = {headers:headers};
 
-        return this._http.post<IWatsonResponse>(this._chatUrl,body,options)
+        return this._http.post<IWatsonResponse>(this._chatUrl + "/submit" ,body,options)
             .do(data => 
                 console.log("Post" + JSON.stringify(data))
             )
