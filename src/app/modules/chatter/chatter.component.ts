@@ -28,6 +28,8 @@ export class ChatterComponent implements OnInit {
     .subscribe(
         comments => {
                 this.comments= comments
+                // var objDiv = document.getElementById("chat-container");
+                // objDiv.scrollTop = objDiv.scrollHeight;
             },
         error => this.errorMessage = <any>error);
   }
@@ -36,7 +38,10 @@ export class ChatterComponent implements OnInit {
     console.log("I'm here with input... " + this._chatInput);
     this.addComment(this._chatInput);
     this._chatInput = '';
+    
     // Send off message for response
+    // var objDiv = document.getElementById("chat-container");
+    // objDiv.scrollTop = objDiv.scrollHeight;
 
   }
 

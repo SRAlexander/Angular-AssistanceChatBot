@@ -2,7 +2,8 @@
     padding-top:20px;
     border: 1px solid black;
     height:70vh;
-    position: absolute;
+    /* position: absolute; */
+    overflow-y: auto;
 }
 
 .chat-comment-box{
@@ -30,6 +31,6 @@
 
 .chat-input-container{
     bottom:0;
-    position: absolute;
-    margin-left:-15px;
+    /* position: absolute; */
+    /* margin-left:-15px; */
 }

@@ -22,8 +22,8 @@ import { SharedModule } from 'app/modules/shared/shared.module';
     HttpClientModule,
     RouterModule.forRoot([
         { path:'welcome', component : WelcomeComponent},
-        { path: '', redirectTo: 'welcome', pathMatch: 'full'},
-        { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
+        { path: '', redirectTo: 'chatter', pathMatch: 'full'},
+        { path: '**', redirectTo: 'chatter', pathMatch: 'full'}
     ])
   ],
   providers: [],

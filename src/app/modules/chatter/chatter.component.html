@@ -5,26 +5,27 @@
   <div class='row'>
     <p>Give me a message below and lets see what happens...</p>
   </div>
-    
-  <div class='container chat-container'>
-    <div class='' *ngFor='let comment of comments'>
-      <div class='container chat-comment-box' [ngClass]="{'left-spacing' : comment.localComment }">
-        <div class='row user-name-section' [ngClass]="{'localComment' : comment.localComment }">
-          <div class='col-12'>  
-            <p class="comment-bottom-margin" [ngClass]="{'text-right': comment.localComment}">{{comment.userName}}</p>
+
+  <div class="container">
+    <div id="chat-container" class='container chat-container' #scrollMe [scrollTop]="scrollMe.scrollHeight">
+      <div class='' *ngFor='let comment of comments'>
+        <div class='container chat-comment-box' [ngClass]="{'left-spacing' : comment.localComment }">
+          <div class='row user-name-section' [ngClass]="{'localComment' : comment.localComment }">
+            <div class='col-12'>
+              <p class="comment-bottom-margin" [ngClass]="{'text-right': comment.localComment}">{{comment.userName}}</p>
+            </div>
           </div>
-        </div>
-        <div class='row'>
-            <div class='col-12'>  
+          <div class='row'>
+            <div class='col-12'>
               <p class="comment-bottom-margin" [ngClass]="{'text-right' : comment.localComment}">{{comment.message}}</p>
             </div>
           </div>
+        </div>
       </div>
     </div>
     <div class='chat-input-container container'>
       <div class='row'>
-      
-        <input class='col-9' type='text' [(ngModel)]='chatInput' (keyup.enter)="postCommentClick()"/>
+        <input class='col-9' type='text' [(ngModel)]='chatInput' (keyup.enter)="postCommentClick()" />
         <button class='btn btn-primary col-3' (click)='postCommentClick()'>Send</button>
       </div>
     </div>
