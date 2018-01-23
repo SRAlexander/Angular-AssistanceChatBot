@@ -55,7 +55,6 @@ export class ChatterComponent implements OnInit {
     this._chatService.postComment(this.newComment.watsonResponse)
     .subscribe(
       comment => {
-        this.comments = [];
         this.comments.push(
           {
             localComment : false,

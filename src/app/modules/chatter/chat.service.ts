@@ -10,7 +10,7 @@ import { IWatsonResponse } from "app/modules/chatter/watson-response";
 @Injectable()
 export class ChatService {
 
-  private _chatUrl : string = 'http://localhost:3000';  
+  private _chatUrl : string = 'http://13.95.223.39';  
 //   private _chatUrl: string = '././api/conversation/conversation.json';
 //   private _chatInit: string = ''
 //   private _chatPost: string = '';
