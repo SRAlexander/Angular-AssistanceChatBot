@@ -12,8 +12,8 @@ var data = ''
 
 // Set up Conversation service wrapper.
 let conversation = new ConversationV1({
-  username: '99d839cb-f9d2-422f-b57d-4c2e6920eb20', // replace with username from service key
-  password: 'imItVTsLVZVP', // replace with password from service key
+  username: '4fc2eb6d-7d1a-448a-b4f3-a086159e104d', // replace with username from service key
+  password: 'uGdwq5HIpPnw', // replace with password from service key
   version_date: ConversationV1.VERSION_DATE_2017_05_26
 })
 
@@ -56,7 +56,7 @@ app.get('*', (req, res) => {
 });
 
 //Set Port
-const port = process.env.PORT || '3001';
+const port = process.env.PORT || '3000';
 app.set('port', port);
 
 const server = http.createServer(app);

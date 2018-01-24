@@ -9,7 +9,7 @@
 
 <div id="chat-container" class='chat-container container' #scrollMe [scrollTop]="scrollMe.scrollHeight">
   <div class='row justify-content-center' *ngFor='let comment of comments'>
-    <div class='container chat-comment-box' [ngClass]="{'left-spacing' : comment.localComment }"> 
+    <div class='container chat-comment-box col-12' [ngClass]="{'left-spacing' : comment.localComment }"> 
         <!-- col-12 col-lg-10 col-xl-8 -->
       <div class='row user-name-section' [ngClass]="{'localComment' : comment.localComment }">
         <div class='col-12'>
@@ -30,8 +30,8 @@
   </div>
 </div>
 <div class='container chat-input-container'>
-  <div class='row'>
-    <input class='col-9 col-md-10 col-lg-11' type='text' placeholder="Your message.." [(ngModel)]='chatInput' (keyup.enter)="postCommentClick()" />
-    <button class='btn-success col-3 col-md-2 col-lg-1' (click)='postCommentClick()'>Send</button>
+  <div class='row justify-content-center'>
+    <input class='col-9 col-sm-10 col-md-10 col-lg-11' type='text' placeholder="Your message.." [(ngModel)]='chatInput' (keyup.enter)="postCommentClick()" />
+    <button class='btn-success col-3 col-sm-2 col-md-2 col-lg-1' (click)='postCommentClick()'>Send</button>
   </div>
 </div>
