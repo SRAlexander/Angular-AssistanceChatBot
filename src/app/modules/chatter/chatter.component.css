@@ -13,9 +13,10 @@
     padding-top:0px;
     /* border: 1px solid lightblue; */
     /* width:100%; */
-    align-self: flex-start;
     margin: 8px 0 8px 0;
     border-radius:3px;
+    
+
 }
 
 .chat-comment-box.left-spacing{
@@ -50,13 +51,7 @@
 
 @media (max-width:576px){
     .chat-container{
-        overflow-y: auto;
-        flex:3;
-        padding-bottom: 12px;
-    }
-    
-    .chat-intro-container {
-        flex:5;
-        margin-top:24px;
+        display: flex;
+        flex-direction:column-reverse;
     }
 }

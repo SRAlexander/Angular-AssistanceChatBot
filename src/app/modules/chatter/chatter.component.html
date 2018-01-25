@@ -1,29 +1,35 @@
 <div class="container chat-intro-container">
   <div class='row'>
-    <div class="col-12"><h2>Chat Demo</h2></div>
+    <div class="col-12">
+      <h2>Chat Demo</h2>
+    </div>
   </div>
   <div class='row'>
-      <div class="col-12"><p>Give me a message below and lets see what happens...</p></div>
+    <div class="col-12">
+      <p>Give me a message below and lets see what happens...</p>
+    </div>
   </div>
 </div>
 
 <div id="chat-container" class='chat-container container' #scrollMe [scrollTop]="scrollMe.scrollHeight">
-  <div class='row justify-content-center' *ngFor='let comment of comments'>
-    <div class='container chat-comment-box col-12' [ngClass]="{'left-spacing' : comment.localComment }"> 
+  <div>
+    <div class='row justify-content-center' *ngFor='let comment of comments'>
+      <div class='container chat-comment-box col-12' [ngClass]="{'left-spacing' : comment.localComment }">
         <!-- col-12 col-lg-10 col-xl-8 -->
-      <div class='row user-name-section' [ngClass]="{'localComment' : comment.localComment }">
-        <div class='col-12'>
-          <p class="comment-bottom-margin" *ngIf="comment.localComment" [ngClass]="{'text-right': comment.localComment}">
-            <i class='fa fa-user-circle'></i> User
-          </p>
-          <p class="comment-bottom-margin" *ngIf="!comment.localComment" [ngClass]="{'text-right': comment.localComment}">
-            <i class='fa fa-question-circle'></i> Watson
-          </p>
+        <div class='row user-name-section' [ngClass]="{'localComment' : comment.localComment }">
+          <div class='col-12'>
+            <p class="comment-bottom-margin" *ngIf="comment.localComment" [ngClass]="{'text-right': comment.localComment}">
+              <i class='fa fa-user-circle'></i> User
+            </p>
+            <p class="comment-bottom-margin" *ngIf="!comment.localComment" [ngClass]="{'text-right': comment.localComment}">
+              <i class='fa fa-question-circle'></i> Watson
+            </p>
+          </div>
         </div>
-      </div>
-      <div class='row msg-section' [ngClass]="{'localComment' : comment.localComment }">
-        <div class='col-12'>
-          <p class="comment-bottom-margin" [ngClass]="{'text-right' : comment.localComment}">{{comment.localComment ? comment.watsonResponse.input.text: comment.watsonResponse.output.text}}</p>
+        <div class='row msg-section' [ngClass]="{'localComment' : comment.localComment }">
+          <div class='col-12'>
+            <p class="comment-bottom-margin" [ngClass]="{'text-right' : comment.localComment}">{{comment.localComment ? comment.watsonResponse.input.text: comment.watsonResponse.output.text}}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -31,7 +37,8 @@
 </div>
 <div class='container chat-input-container'>
   <div class='row justify-content-center'>
-    <input class='col-9 col-sm-10 col-md-10 col-lg-11' type='text' placeholder="Your message.." [(ngModel)]='chatInput' (keyup.enter)="postCommentClick()" />
+    <input class='col-9 col-sm-10 col-md-10 col-lg-11' type='text' placeholder="Your message.." [(ngModel)]='chatInput' (keyup.enter)="postCommentClick()"
+    />
     <button class='btn-success col-3 col-sm-2 col-md-2 col-lg-1' (click)='postCommentClick()'>Send</button>
   </div>
 </div>
