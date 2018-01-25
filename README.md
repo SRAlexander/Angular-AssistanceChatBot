@@ -1,14 +1,14 @@
 # From scratch environemt set up
 
-- Recomended environment : Visual Studio code - built in terminal window makes things nice.
+- Recomended environment - Visual Studio code - built in terminal window makes things nice.
 
-NODE - Make sure node is installed with (node - v), if not grab it from https://nodejs.org/en/
-YARN - I'm also a fan of Yarn which can be grabbed from https://yarnpkg.com/lang/en/docs/install/
-ANGULAR CLI - Great fast Angualr tool which can be aquaired by typing $ npm install -g @angular/cli into a terminal window.
+- NODE - Make sure node is installed with (node - v), if not grab it from https://nodejs.org/en/
+- YARN - I'm also a fan of Yarn which can be grabbed from https://yarnpkg.com/lang/en/docs/install/
+- ANGULAR CLI - Great fast Angualr tool which can be aquaired by typing $ npm install -g @angular/cli into a terminal window.
 
-other tools - 
-BOOTSTRAP V4 - The project will grab the files automaticly but its worth reading into.
-FontAwesome 4 - Good popular font library, again it will be installed automaticly on build.
+# Other tools  
+- BOOTSTRAP V4 - The project will grab the files automaticly but its worth reading into.
+- FontAwesome 4 - Good popular font library, again it will be installed automaticly on build.
 
 With that you're good to go. 
 
