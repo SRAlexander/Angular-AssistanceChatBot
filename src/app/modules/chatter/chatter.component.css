@@ -1,9 +1,14 @@
 
 .chat-container{
     overflow-y: auto;
-    flex:1;
+    flex:7;
+    padding-bottom: 12px;
 }
 
+.chat-intro-container {
+    flex:1;
+    margin-top:24px;
+}
 .chat-comment-box{
     padding-top:0px;
     /* border: 1px solid lightblue; */
@@ -40,6 +45,18 @@
 }
 
 .chat-input-container{
-    margin-top:20px;
+    margin-bottom:20px;
 }
 
+@media (max-width:576px){
+    .chat-container{
+        overflow-y: auto;
+        flex:3;
+        padding-bottom: 12px;
+    }
+    
+    .chat-intro-container {
+        flex:5;
+        margin-top:24px;
+    }
+}

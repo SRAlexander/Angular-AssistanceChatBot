@@ -4,7 +4,7 @@ app-chatter {
     display:flex;
     flex-direction: column;
     height: 100vh;
-    padding-top:70px;
+    padding-top:56px;
 }
 
 #page-container {
