@@ -5,9 +5,12 @@ var path = require("path")
 var http = require("http");
 
 // Watson creditials and workspace (Modify these to yours)
-var watsonUsername = '99d839cb-f9d2-422f-b57d-4c2e6920eb20' // replace with username from service key
-var watsonPassword = 'imItVTsLVZVP'
-var watsonWorkspace = '0fb1c64d-137a-4cde-8b57-3a027069938a'
+// var watsonUsername = '99d839cb-f9d2-422f-b57d-4c2e6920eb20' // replace with username from service key
+// var watsonPassword = 'imItVTsLVZVP'
+// var watsonWorkspace = '0fb1c64d-137a-4cde-8b57-3a027069938a'
+var watsonUsername = '4fc2eb6d-7d1a-448a-b4f3-a086159e104d' // replace with username from service key
+var watsonPassword = 'uGdwq5HIpPnw'
+var watsonWorkspace = '46cb23e6-3e09-4701-8345-369defe132ee'
 
 const app = express()
 app.use(bodyParser.urlencoded())
