@@ -1,5 +1,13 @@
 /* Make room for the header */
+app-chatter {
+    /* padding-top:56px; */
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top:70px;
+}
 
 #page-container {
-    padding-top:56px;
+    /* padding-top:56px; */
+    
 }

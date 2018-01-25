@@ -20,6 +20,6 @@ To run the application you will need an IBM Watson Conversation account https://
 
 Azure info:-   
 
-Create an account if you don't have one. https://azure.microsoft.com/en-gb/free/
+Create an account if you don't have one. https://azure.microsoft.com/en-gb/free/. Select New > Virtual Machines > Create Virtual Machine. Fill in the details requested and continue. (Windows Server Datacenter 2016).
 
 

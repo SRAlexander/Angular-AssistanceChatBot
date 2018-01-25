@@ -1,12 +1,7 @@
 
 .chat-container{
-    padding:8px 16px 12px 16px;
-    /* border: 1px solid lightsteelblue; */
-    height:88vh;
-    /* position: absolute; */
     overflow-y: auto;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+    flex:1;
 }
 
 .chat-comment-box{
@@ -44,20 +39,7 @@
     margin-bottom:4px;
 }
 
-
-
-
-@media (max-width: 575px) { 
-    /* .chat-input-container {
-        bottom: 0;
-        position: absolute;
-    } */
-
-    .chat-container{
-        /* border: 1px solid lightsteelblue; */
-        height:87vh;
-        /* position: absolute; */
-
-    }
+.chat-input-container{
+    margin-top:20px;
 }
 
