@@ -10,6 +10,6 @@ import { IWatsonResponse } from "app/modules/chatter/watson-response";
 // }
 
 export interface IComment {
-    localComment: boolean;
+    isCurrentUser: boolean;
     watsonResponse: IWatsonResponse
 }

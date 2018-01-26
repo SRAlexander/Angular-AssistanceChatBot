@@ -12,23 +12,22 @@
 </div>
 
 <div id="chat-container" class='chat-container container' #scrollMe [scrollTop]="scrollMe.scrollHeight">
-  <div>
+  <div class="flex-direction-bypass">
     <div class='row justify-content-center' *ngFor='let comment of comments'>
-      <div class='container chat-comment-box col-12' [ngClass]="{'left-spacing' : comment.localComment }">
-        <!-- col-12 col-lg-10 col-xl-8 -->
-        <div class='row user-name-section' [ngClass]="{'localComment' : comment.localComment }">
+      <div class='container chat-comment-box col-12' [ngClass]="{'isCurrentUser' : comment.isCurrentUser }">
+        <div class='row user-name-section' [ngClass]="{'isCurrentUser' : comment.isCurrentUser }">
           <div class='col-12'>
-            <p class="comment-bottom-margin" *ngIf="comment.localComment" [ngClass]="{'text-right': comment.localComment}">
+            <p class="comment-bottom-margin" *ngIf="comment.isCurrentUser" [ngClass]="{'text-right': comment.isCurrentUser}">
               <i class='fa fa-user-circle'></i> User
             </p>
-            <p class="comment-bottom-margin" *ngIf="!comment.localComment" [ngClass]="{'text-right': comment.localComment}">
+            <p class="comment-bottom-margin" *ngIf="!comment.isCurrentUser" [ngClass]="{'text-right': comment.isCurrentUser}">
               <i class='fa fa-question-circle'></i> Watson
             </p>
           </div>
         </div>
-        <div class='row msg-section' [ngClass]="{'localComment' : comment.localComment }">
+        <div class='row msg-section' [ngClass]="{'isCurrentUser' : comment.isCurrentUser }">
           <div class='col-12'>
-            <p class="comment-bottom-margin" [ngClass]="{'text-right' : comment.localComment}">{{comment.localComment ? comment.watsonResponse.input.text: comment.watsonResponse.output.text}}</p>
+            <p class="comment-bottom-margin" [ngClass]="{'text-right' : comment.isCurrentUser}">{{comment.isCurrentUser ? comment.watsonResponse.input.text: comment.watsonResponse.output.text}}</p>
           </div>
         </div>
       </div>

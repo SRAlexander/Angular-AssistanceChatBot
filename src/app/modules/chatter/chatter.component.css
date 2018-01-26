@@ -1,4 +1,3 @@
-
 .chat-container{
     overflow-y: auto;
     flex:7;
@@ -9,17 +8,14 @@
     flex:1;
     margin-top:24px;
 }
+
 .chat-comment-box{
     padding-top:0px;
-    /* border: 1px solid lightblue; */
-    /* width:100%; */
     margin: 8px 0 8px 0;
     border-radius:3px;
-    
-
 }
 
-.chat-comment-box.left-spacing{
+.chat-comment-box.isCurrentUser{
     padding-left:10px;
 }
 
@@ -33,11 +29,11 @@
     padding-top:12px;
 }
 
-.chat-comment-box .user-name-section.localComment{
+.chat-comment-box .user-name-section.isCurrentUser{
     background-color: lightgreen;
 }
 
-.chat-comment-box .msg-section.localComment{
+.chat-comment-box .msg-section.isCurrentUser{
     background-color: #fefbf7;
 }
 

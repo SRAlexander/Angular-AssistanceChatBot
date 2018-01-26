@@ -33,7 +33,7 @@ export class ChatterComponent implements OnInit {
           this.comments = [];
           this.comments.push(
             {
-              localComment : false,
+              isCurrentUser : false,
               watsonResponse: comment
             })
         },
@@ -57,7 +57,7 @@ export class ChatterComponent implements OnInit {
       comment => {
         this.comments.push(
           {
-            localComment : false,
+            isCurrentUser : false,
             watsonResponse: comment
           })
       },
@@ -68,7 +68,7 @@ export class ChatterComponent implements OnInit {
   addComment(message :string) : void {
     let lastComment = this.comments[this.comments.length-1];
     this.newComment = JSON.parse(JSON.stringify(lastComment));
-    this.newComment.localComment = true;
+    this.newComment.isCurrentUser = true;
     this.newComment.watsonResponse.input.text = message;
     this.comments.push(this.newComment);
     return;
